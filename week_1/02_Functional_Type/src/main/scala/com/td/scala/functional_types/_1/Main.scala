@@ -8,12 +8,16 @@ object Main extends App {
 
   println(car1.color)
 
-  car1.speedUp(10)
+  car1.speedUp(10) match {
+    case Left(error) => println(error)
+    case Right(c) => {
+      println(c.speed)
 
-  println(car1.speed)
-
-  car1.brake(-8)
-
-  println(car1.speed)
+      c.brake(-8) match {
+        case Left(error) => println(error)
+        case Right(c) => println(c.speed)
+      }
+    }
+  }
 
 }

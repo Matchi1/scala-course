@@ -57,8 +57,11 @@ object CarConstructor {
     14 -> new Car(5, Red, 2)
   )
 
-  def searchCarById(code: Int): Option[Car] = ???
+  def searchCarById(code: Int): Option[Car] = {
+    garage.get(code)
+  }
 
-  def searchCarsByColor(c: Color): List[Car] = ???
-
+  def searchCarsByColor(c: Color): List[Car] = {
+      garage.toList.filter(entry => entry._2.color == c).map(entry => entry._2)
+  }
 }
