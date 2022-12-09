@@ -11,5 +11,12 @@ object Main extends App {
 
   //new version of chrome
 
+  val chrome1 = Browser(2.4, "Chrome", Seq("Windows", "Linux"))
+  println((chrome.equals(firefox)))
+  println((chrome == firefox))
+  println((chrome.equals(chrome1)))
+  println((chrome == chrome1))
 
+  val chrome2 = chrome.copy(2.5)
+  println(chrome2.version)
 }

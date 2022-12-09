@@ -1,6 +1,6 @@
 package com.td.case_classes
 
-class Browser(val version: Double, val kind: String, val platform: Seq[String]) {
+case class Browser(val version: Double, val kind: String, val platform: Seq[String]) {
 
   def canEqual(other: Any): Boolean = other.isInstanceOf[Browser]
 
@@ -18,9 +18,3 @@ class Browser(val version: Double, val kind: String, val platform: Seq[String]) 
     state.map(_.hashCode()).foldLeft(0)((a, b) => 31 * a + b)
   }
 }
-
-object Browser {
-
-  def apply(version: Double, kind: String, platform: Seq[String]): Browser = new Browser(version, kind, platform)
-}
-
