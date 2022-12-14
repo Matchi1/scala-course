@@ -1,7 +1,6 @@
 package com.td.fold
 
-import java.time.LocalDateTime
-import java.time.temporal.ChronoUnit
+import java.time.{LocalDateTime, ZoneOffset}
 
 object Monitor {
 
@@ -10,9 +9,11 @@ object Monitor {
   // def parse(list: List[List[(String, String)]]): List[List[(LocalDateTime, LocalDateTime)]] =
   // but
   // TODO: implement a function parse: ((String, String)) => (LocalDateTime, LocalDateTime)
-  val parse: ((String, String)) => (LocalDateTime, LocalDateTime) = ???
+  val parse: ((String, String)) => (LocalDateTime, LocalDateTime) = a => Tuple2(LocalDateTime.parse(a._1), LocalDateTime.parse(a._2))
 
   // TODO: implement a function parse: ((String, String)) => (LocalDateTime, LocalDateTime)
-  val duration: ((LocalDateTime, LocalDateTime)) => Long = ???
+  val duration: ((LocalDateTime, LocalDateTime)) => Long = a => {
+    (a._2.toEpochSecond(ZoneOffset.UTC) - a._1.toEpochSecond(ZoneOffset.UTC))
+  }
 
 }

@@ -90,5 +90,4 @@ class Test extends AnyFlatSpec with Matchers {
     MyList(3) shouldBe MyList.init(3)
     MyList() shouldBe End
   }
-
 }

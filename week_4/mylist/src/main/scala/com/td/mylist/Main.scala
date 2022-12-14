@@ -6,14 +6,14 @@ object Main extends App {
 
   // Examples
 
-  // val list1: MyList[Int] = Element(1, End)
-  // val list2: MyList[Int] = Element(1, End)
-  // val list3              = MyList.init(1, 2, 3)
-  // val list4              = MyList.init(1, 2, 3, 5).map(_ * 2)
+  val list1: MyList[Int] = Element(1, End)
+  val list2: MyList[Int] = Element(1, End)
+  val list3              = MyList.init(1, 2, 3)
+  val list4              = MyList.init(1, 2, 3, 5).map(_ * 2)
 
-  // println(list1 == list2)
-  // println(End == End)
-  // println(list1 == list2)
-  // println(list3.toPrint)
-  // println(list4.toPrint)
+  println(list1 == list2)
+  println(End == End)
+  println(list1 == list2)
+  println(list3.toPrint)
+  println(list4.toPrint)
 }
